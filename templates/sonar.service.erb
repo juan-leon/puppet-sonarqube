@@ -1,15 +1,16 @@
 [Unit]
-Description=Sonar <%= @version.to_s %>
+Description=Sonar <%= @version %>
 After=network.target network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=<%= @installroot.to_s -%>/sonar/bin/linux-<%= @architecture.to_s.gsub(/_/,'-') -%>/bin/sonar.sh start
-ExecStop=<%= @installroot.to_s -%>/sonar/bin/linux-<%= @architecture.to_s.gsub(/_/,'-') -%>/bin/sonar.sh stop
-ExecReload=<%= @installroot.to_s -%>/sonar/bin/linux-<%= @architecture.to_s.gsub(/_/,'-') -%>/bin/sonar.sh restart
-PIDFile=<%= @installroot.to_s -%>/sonar.pid
+ExecStart=<%= @installroot -%>/sonar/bin/<%= @arch.to_s -%>/sonar.sh start
+ExecStop=<%= @installroot -%>/sonar/bin/<%= @arch.to_s -%>/sonar.sh stop
+ExecReload=<%= @installroot -%>/sonar/bin/<%= @arch.to_s -%>/sonar.sh restart
+PIDFile=<%= @home -%>/sonar.pid
 Type=forking
-User=<%= @user.to_s %>
+User=<%= @user %>
+LimitNOFILE=262144
 
 [Install]
 WantedBy=multi-user.target

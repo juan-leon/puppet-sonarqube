@@ -10,6 +10,11 @@ ExecReload=<%= @installroot -%>/sonar/bin/<%= @arch.to_s -%>/sonar.sh restart
 PIDFile=<%= @home -%>/sonar.pid
 Type=forking
 User=<%= @user %>
+Group=<%= @user %>
+Restart=always
+KillSignal=SIGQUIT
+NotifyAccess=all
+RestartSec=30
 LimitNOFILE=262144
 
 [Install]

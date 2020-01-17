@@ -10,10 +10,6 @@
   "description": "A module to install and configure SonarQube (former Sonar)",
   "dependencies": [
     {
-      "name": "maestrodev/wget",
-      "version_requirement": ">=0.0.1 <2.0.0"
-    },
-    {
       "name": "maestrodev/maven",
       "version_requirement": ">=0.0.2 <2.0.0"
     },

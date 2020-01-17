@@ -9,5 +9,6 @@ define sonarqube::move_to_home (
   file { "${sonarqube::installdir}/${name}":
     ensure => link,
     target => "${home}/${name}",
+    force  => true,
   }
 }

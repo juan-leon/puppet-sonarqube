@@ -211,6 +211,7 @@ sonar.jdbc.timeBetweenEvictionRunsMillis:  <% if @jdbc['time_between_eviction_ru
 # The Update Center requires an internet connection to request http://update.sonarsource.org
 # It is activated by default:
 sonar.updatecenter.activate=<%= @updatecenter %>
+sonar.updatecenter.url=<%= @updatecenter_url %>
 
 <% if !@http_proxy.empty? -%>
 # HTTP proxy (default none)

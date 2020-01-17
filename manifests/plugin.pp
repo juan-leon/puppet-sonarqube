@@ -38,7 +38,7 @@ define sonarqube::plugin(
     }
     ~>
     exec { "remove-old-versions-of-${artifactid}":
-      command     => "/tmp/cleanup-old-plugin-versions.sh ${sonarqube::plugin_dir} ${artifactid} ${version}",
+      command     => "bash /tmp/cleanup-old-plugin-versions.sh ${sonarqube::plugin_dir} ${artifactid} ${version}",
       path        => '/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin',
       refreshonly => true,
     }

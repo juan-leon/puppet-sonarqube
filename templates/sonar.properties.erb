@@ -271,10 +271,10 @@ ldap.authentication=<%= @ldap['authentication'] %>
 <% end -%>
 
 <% if @ldap['user_base_dn'] -%>
-ldap.user.baseDn: <%= @ldap['user_base_dn'] %>
+ldap.user.baseDn=<%= @ldap['user_base_dn'] %>
 <% end -%>
 <% if @ldap['user_request'] -%>
-ldap.user.request: <%= @ldap['user_request'] %>
+ldap.user.request=<%= @ldap['user_request'] %>
 <% end -%>
 <% if @ldap['user_real_name_attribute'] -%>
 ldap.user.realNameAttribute=<%= @ldap['user_real_name_attribute'] %>

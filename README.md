@@ -33,7 +33,7 @@ or
       service       => 'sonar',
       installroot   => '/usr/local',
       home          => '/var/local/sonar',
-      download_url  => 'https://sonarsource.bintray.com/Distribution/sonarqube'
+      download_url  => 'https://binaries.sonarsource.com/Distribution/sonarqube'
       jdbc          => $jdbc,
       web_java_opts => '-Xmx1024m',
       log_folder    => '/var/local/sonar/logs',

@@ -103,6 +103,33 @@ sonar.web.https.keystoreType=<%= @https['keystoretype'] %>
 
 <% end -%>
 
+#--------------------------------------------------------------------------------------------------
+# COMPUTE ENGINE
+# The Compute Engine is responsible for processing background tasks.
+# Compute Engine is executed in a dedicated Java process. Default heap size is 512Mb.
+# Use the following property to customize JVM options.
+#    Recommendations:
+#
+#    The HotSpot Server VM is recommended. The property -server should be added if server mode
+#    is not enabled by default on your environment:
+#    http://docs.oracle.com/javase/8/docs/technotes/guides/vm/server-class.html
+#
+<% if @ce_java_opts -%>
+sonar.ce.javaOpts=<%= @ce_java_opts %>
+<% end -%>
+
+# Same as previous property, but allows to not repeat all other settings like -Xmx
+#sonar.ce.javaAdditionalOpts=
+# The number of workers in the Compute Engine. Value must be greater than zero.
+# By default the Compute Engine uses a single worker and therefore processes tasks one at a time.
+#    Recommendations:
+#
+#    Using N workers will require N times as much Heap memory (see property
+#    sonar.ce.javaOpts to tune heap) and produce N times as much IOs on disk, database and
+#    Elasticsearch. The number of workers must suit your environment.
+<% if @ce_workercount -%>
+sonar.ce.workerCount=<%= @ce_workercount %>
+<% end -%>
 
 #--------------------------------------------------------------------------------------------------
 # ELASTICSEARCH

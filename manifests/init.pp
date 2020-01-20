@@ -54,6 +54,7 @@ class sonarqube (
   $search_host      = '127.0.0.1',
   $search_port      = '9001',
   $config           = undef,
+  $wrapper_conf     = "../../conf/wrapper.conf",
 ) inherits sonarqube::params {
   validate_absolute_path($download_dir)
   Exec {

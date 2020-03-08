@@ -7,7 +7,7 @@ Wants=network-online.target
 ExecStart=<%= @installroot -%>/sonar/bin/<%= @arch.to_s -%>/sonar.sh start
 ExecStop=<%= @installroot -%>/sonar/bin/<%= @arch.to_s -%>/sonar.sh stop
 ExecReload=<%= @installroot -%>/sonar/bin/<%= @arch.to_s -%>/sonar.sh restart
-PIDFile=<%= @home -%>/sonar.pid
+PIDFile=<%= @real_home -%>/sonar.pid
 Type=forking
 User=<%= @user %>
 Group=<%= @user %>
